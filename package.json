@@ -1,0 +1,27 @@
+{
+  "name": "meta-cards",
+  "version": "1.0.0",
+  "description": "Add open graph cards for html documents",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "scripts": {
+    "test": "jest --verbose --watchAll",
+    "testTravis": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erdembircan/meta-cards.git"
+  },
+  "keywords": ["open", "graph", "meta", "card", "twitter"],
+  "author": "Erdem Bircan <erdem.erdembircan@gmail.com> (https://erdembircan.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erdembircan/meta-cards/issues"
+  },
+  "homepage": "https://github.com/erdembircan/meta-cards#readme",
+  "dependencies": {
+    "jest": "^21.2.1"
+  }
+}
