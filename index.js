@@ -53,7 +53,7 @@ function addCards(options, autofill = false, override = false, document = docume
     );
     metaTag.content = content;
     head.appendChild(metaTag);
-    return mateTag.outerHTML;
+    return metaTag.outerHTML;
   }).join('');
 }
 
