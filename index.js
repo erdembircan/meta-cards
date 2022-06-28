@@ -41,17 +41,18 @@ const _options = {
 function addCards(options, autofill = false, override = false) {
   const head = document.head || document.getElementsByTagName('head')[0];
   const parsedOptions = _parseOptions(options, autofill, override);
-  Object.keys(parsedOptions).forEach((prop) => {
-    const content = parsedOptions[prop];
-    if (!content) return;
-    const metaTag = document.createElement('meta');
-    metaTag.setAttribute(
-      prop.startsWith('twitter') ? 'name' : 'property',
-      !prop.startsWith('twitter') && !prop.startsWith('og') ? `og:${prop}` : prop,
-    );
-    metaTag.content = content;
-    head.appendChild(metaTag);
-  });
+  head.append(
+    ...Object.entries(parsedOptions).map(([prop, content]) => {
+      if (!content) return;
+      const metaTag = document.createElement('meta');
+      metaTag.setAttribute(
+        prop.startsWith('twitter') ? 'name' : 'property',
+        !prop.startsWith('twitter') && !prop.startsWith('og') ? `og:${prop}` : prop,
+      );
+      metaTag.content = content;
+      return metaTag
+    })
+  );
 }
 
 /**
