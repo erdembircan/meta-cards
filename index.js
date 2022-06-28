@@ -38,6 +38,7 @@ const _options = {
  * @param {boolean} [autofill=false] - an option to fill all empty properties with 'no prefix'
  * @param {boolean} [override=false] - an option to override default options and add custom tags
  * @param {document} [document=document] - an option to override the global document and use another document object
+ * @return {string} HTML - a string of the html of all the created meta-tags
  */
 function addCards(options, autofill = false, override = false, document = document) {
   const head = document.head || document.getElementsByTagName('head')[0];
