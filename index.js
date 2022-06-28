@@ -42,7 +42,7 @@ const _options = {
 function addCards(options, autofill = false, override = false, document = document) {
   const head = document.head || document.getElementsByTagName('head')[0];
   const parsedOptions = _parseOptions(options, autofill, override);
-  Object.keys(parsedOptions).forEach((prop) => {
+  return Object.keys(parsedOptions).map((prop) => {
     const content = parsedOptions[prop];
     if (!content) return;
     const metaTag = document.createElement('meta');
@@ -52,7 +52,8 @@ function addCards(options, autofill = false, override = false, document = docume
     );
     metaTag.content = content;
     head.appendChild(metaTag);
-  });
+    return mateTag.outerHTML;
+  }).join('');
 }
 
 /**
